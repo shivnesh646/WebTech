@@ -108,7 +108,7 @@
                 </p>
                 <p>
                     <label for="zip">Zip Code:</label>
-                    <input type="text" name="zip" placeholder="only 6 numbers">
+                    <input type="number" name="zip" placeholder="only 6 numbers">
                 </p>
             </form>
         </fieldset>
@@ -177,7 +177,7 @@
                         <td><input type="number" title="Percentage"></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="10th" checked>
+                        <td><input type="checkbox" name="12th" checked>
                             <label for="12th">12th</label></td>
                         <td><input type="text" placeholder="Board/University"></td>
                         <td>
@@ -194,8 +194,8 @@
                         <td><input type="number" title="Percentage"></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="10th">
-                            <label for="B.tech">BTech</label></td>
+                        <td><input type="checkbox" name="b-tech">
+                            <label for="b-tech">B.Tech</label></td>
                         <td><input type="text" placeholder="Board/University"></td>
                         <td>
                             <select name="countries" id="countries" title="List of countries">
@@ -211,8 +211,8 @@
                         <td><input type="number" title="Percentage"></td>
                     </tr>
                     <tr>
-                        <td><input type="checkbox" name="10th">
-                            <label for="M.Tech">Mtech</label></td>
+                        <td><input type="checkbox" name="m-tech">
+                            <label for="m-tech">M.tech</label></td>
                         <td><input type="text" placeholder="Board/University"></td>
                         <td>
                             <select name="countries" id="countries" title="List of countries">
@@ -250,7 +250,7 @@
         </form>
 
         <div class="slider-bois">
-            <input type="range" min=0 max=100 value=100 name="">
+            <progress min=0 max=100 value=100 name="">
             <label for="">100% out of 100%</label>
         </div>
     </section>
