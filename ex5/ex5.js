@@ -19,12 +19,15 @@ document.getElementById("bmi-compute").addEventListener("click", (e) => {
     const weight = document.getElementById("weight").value;
 
     const bmi = weight / ((height / 100) ** 2);
-    if (bmi < 18.5) document.getElementById("bmi-type-output").innerText = "Underweight";
-    if (bmi>18.6 && bmi < 24.9) document.getElementById("bmi-type-output").innerText = "Normal";
-    if (bmi>25 && bmi < 29.9) document.getElementById("bmi-type-output").innerText = "Overweight";
-    if (bmi > 30) document.getElementById("bmi-type-output").innerText = "Obese";
+    let type = "Unknown";
+
+    if (bmi < 18.5) type = "Underweight";
+    if (bmi>18.6 && bmi < 24.9) type = "Normal";
+    if (bmi>30 && bmi < 29.9) type = "Overweight";
+    if (bmi > 30) type = "Obese";
 
     document.getElementById("bmi-output").innerText = bmi;
+    document.getElementById("bmi-type-output").innerText = type;
     
 });
 
