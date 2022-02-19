@@ -23,7 +23,7 @@ document.getElementById("bmi-compute").addEventListener("click", (e) => {
 
     if (bmi < 18.5) type = "Underweight";
     if (bmi>18.6 && bmi < 24.9) type = "Normal";
-    if (bmi>30 && bmi < 29.9) type = "Overweight";
+    if (bmi>25 && bmi < 29.9) type = "Overweight";
     if (bmi > 30) type = "Obese";
 
     document.getElementById("bmi-output").innerText = bmi;
