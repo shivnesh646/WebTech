@@ -1,0 +1,56 @@
+html
+{
+    background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Computer-screen-code-glitch-animation-gif-background-free.gif/1200px-Computer-screen-code-glitch-animation-gif-background-free.gif?20180213040859");
+   background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+h1{
+    text-align: center;
+
+    font-family: 'Smooch Sans', sans-serif;
+    font-size:1.5cm;
+    font-weight: bolder;
+    color: aqua;
+
+}
+p{
+    background-color: black;
+    font-size: 0.75cm;
+    color:white;
+}
+a{
+    font-size: 0.5cm;
+    text-align: center;
+    color: aqua;
+    
+}
+#cont{
+    padding:0%
+}
+#cont2{
+    padding:0%
+}
+section{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  background:black;
+}
+
+section div{
+    padding-left: 30px;
+    font-size: 30px;
+    color: aqua;
+}
+div{
+    display: inline-block;
+}
+
+p{
+    font-family: 'Fredoka', sans-serif;
+    /* font-family: 'Smooch Sans', sans-serif; */
+}
+div span {
+    font-family: 'Smooch Sans', sans-serif;
+}
