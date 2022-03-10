@@ -15,7 +15,7 @@ h1{
 
 }
 p{
-    background-color: black;
+    background-image: url("g.gif");
     font-size: 0.75cm;
     color:white;
 }
@@ -35,7 +35,7 @@ section{
     display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background:black;
+  background-image: url("g.gif");
 }
 
 section div{
