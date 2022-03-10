@@ -1,6 +1,6 @@
 html
 {
-    background-image: url("https://github.com/shivnesh646/WebTech/blob/main/g.gif?raw=true");
+    background-image: url("https://img.gs/czjpqfbdkz/full/https://raw.githubusercontent.com/mov-rax-rbx/rsmatrix/HEAD/gif/preview3.gif");
    background-size: cover; 
     background-repeat: no-repeat;
 }
@@ -15,7 +15,7 @@ h1{
 
 }
 p{
-        background-image: url("https://img.gs/czjpqfbdkz/full/https://raw.githubusercontent.com/mov-rax-rbx/rsmatrix/HEAD/gif/preview1.gif");
+        background-color: black ;
     background-size: cover;
         font-size: 0.75cm;
     color:white;
@@ -36,7 +36,7 @@ section{
     display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  background-image: url("https://img.gs/czjpqfbdkz/full/https://raw.githubusercontent.com/mov-rax-rbx/rsmatrix/HEAD/gif/preview3.gif");
+  color: black;
   background-size: cover;
 }
 
