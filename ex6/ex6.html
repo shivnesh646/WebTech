@@ -19,7 +19,7 @@
 
         #secs {
             font-size: 20px;
-            color: red;
+            color: cyan;
             font-weight: 800;
         }
     </style>
@@ -31,7 +31,6 @@
             height="100px">
         <input type="button" id="move" value="Move">
         <input type="button" id="stop" value="Stop">
-        <input type="range" name="accelerator" id="accelerator" min="0" max="100" value="50" style="display: none;">
     </div>
     <br>
 
@@ -79,7 +78,7 @@
         const move = () => {
             const car = document.getElementById("car-image");
             movement = setInterval(() => {
-                if (parseInt(car.style.left) >= (window.screen.availWidth / 2)) {
+                if (parseInt(car.style.left) >= (window.screen.availWidth )) {
                     car.style.left = "0px";
                 }
                 car.style.left = parseInt(car.style.left) + 1 + "px";
@@ -93,14 +92,7 @@
         document.getElementById("stop").addEventListener("click", (e) => clearInterval(movement));
         document.getElementById("accelerator").addEventListener(
             "input",
-            (e) => {
-                if (speed > parseInt(e.target.value))
-                    speed = parseInt(e.target.value) / 100;
-                else
-                    speed = parseInt(e.target.value) * 100;
-
-                clearInterval(movement);
-                move();
+            
             }
         );
 
