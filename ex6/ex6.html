@@ -6,20 +6,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ex 6</title>
-
 </head>
 
 <body>
     <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
 
         #time {
             text-align: center;
             font-size: 160px;
+            color: cyan;
         }
 
         #secs {
             font-size: 20px;
-            color: cyan;
+            color: green;
             font-weight: 800;
         }
     </style>
@@ -38,16 +41,16 @@
         <table id="obj-table" border="1">
             <thead>
                 <td>Name</td>
-                <td>com</td>
+                <td>Company</td>
                 <td>DOB</td>
             </thead>
         </table>
     </div>
 
     <script>
-        const GREEN = "rgb(199, 237, 209)";
-        const RED = "rgb(230, 191, 184)";
-        let lastColor = "rgb(199, 237, 209)";
+        const GREEN = "rgb(129, 237, 209)";
+        const RED = "rgb(230, 191, 183)";
+        let lastColor = "rgb(199, 258, 209)";
 
         const getColor = () => {
             lastColor = lastColor == GREEN ? RED : GREEN;
@@ -78,7 +81,7 @@
         const move = () => {
             const car = document.getElementById("car-image");
             movement = setInterval(() => {
-                if (parseInt(car.style.left) >= (window.screen.availWidth )) {
+                if (parseInt(car.style.left) >= window.screen.availWidth) {
                     car.style.left = "0px";
                 }
                 car.style.left = parseInt(car.style.left) + 1 + "px";
@@ -92,10 +95,7 @@
         document.getElementById("stop").addEventListener("click", (e) => clearInterval(movement));
         document.getElementById("accelerator").addEventListener(
             "input",
-            
-            }
-        );
-        (e) => {
+            (e) => {
                 if (speed > parseInt(e.target.value))
                     speed = parseInt(e.target.value) / 100;
                 else
@@ -108,9 +108,9 @@
 
         // Q5
         const objects = [
-            { name: "Musk", com: "Tesla", dob: new Date(2002, 4, 18), },
+            { name: "Elon Musk", com: "Tesla", dob: new Date(2002, 4, 18), },
             { name: "Mark", com: "Meta", dob: new Date(2001, 8, 28), },
-            { name: "Sundar", com: "Google", dob: new Date(2001, 2, 8), },
+            { name: "Sundar Pichai", com: "Google", dob: new Date(2001, 2, 8), },
         ];
 
         objects.forEach((object) => {
