@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 6</title>
+
+</head>
+
+<body>
+    <style>
+
+        #time {
+            text-align: center;
+            font-size: 160px;
+        }
+
+        #secs {
+            font-size: 20px;
+            color: red;
+            font-weight: 800;
+        }
+    </style>
+    <h1 id="title" onmouseout="dec()" onmouseover="inc()">Digital Clock</h1>
+    <div id="time"></div>
+
+    <div id="car-block">
+        <img id="car-image" style="position: relative; left: 0px;" src="car.png" alt="Car" widht="100px"
+            height="100px">
+        <input type="button" id="move" value="Move">
+        <input type="button" id="stop" value="Stop">
+        <input type="range" name="accelerator" id="accelerator" min="0" max="100" value="50" style="display: none;">
+    </div>
+    <br>
+
+    <div id="objects">
+        <table id="obj-table" border="1">
+            <thead>
+                <td>Name</td>
+                <td>Reg</td>
+                <td>DOB</td>
+            </thead>
+        </table>
+    </div>
+
+    <script>
+        const GREEN = "rgb(199, 237, 209)";
+        const RED = "rgb(230, 191, 184)";
+        let lastColor = "rgb(199, 237, 209)";
+
+        const getColor = () => {
+            lastColor = lastColor == GREEN ? RED : GREEN;
+            return lastColor;
+        };
+
+        const clock = setInterval(() => {
+            const date = new Date();
+
+            const hour = date.getHours();
+            const minute = date.getMinutes();
+            const seconds = date.getSeconds();
+
+            document.getElementById("time").innerHTML = `<span>${hour}:${minute}</span><span id="secs">  ${seconds}</span>`;
+
+        }, 1000);
+
+        setInterval(() => {
+            document.querySelector("html").style.backgroundColor = getColor();
+        }, 30000);
+
+        const inc = () => document.getElementById("title").style.fontSize = "50px";
+        const dec = () => document.getElementById("title").style.fontSize = "20px";
+
+        let movement;
+        let speed = 10;
+
+        const move = () => {
+            const car = document.getElementById("car-image");
+            movement = setInterval(() => {
+                if (parseInt(car.style.left) >= (window.screen.availWidth / 2)) {
+                    car.style.left = "0px";
+                }
+                car.style.left = parseInt(car.style.left) + 1 + "px";
+            }, speed);
+        }
+
+        document.getElementById("move").addEventListener("click", (e) => {
+            move();
+        });
+
+        document.getElementById("stop").addEventListener("click", (e) => clearInterval(movement));
+        document.getElementById("accelerator").addEventListener(
+            "input",
+            (e) => {
+                if (speed > parseInt(e.target.value))
+                    speed = parseInt(e.target.value) / 100;
+                else
+                    speed = parseInt(e.target.value) * 100;
+
+                clearInterval(movement);
+                move();
+            }
+        );
+
+        // Q5
+        const objects = [
+            { name: "Musk", com: "Tesla", dob: new Date(2002, 4, 18), },
+            { name: "Mark", com: "Meta", dob: new Date(2001, 8, 28), },
+            { name: "Sundar", com: "Google", dob: new Date(2001, 2, 8), },
+        ];
+
+        objects.forEach((object) => {
+            const tr = document.createElement("tr");
+            Object.keys(object).forEach((key) => {
+
+                const td = document.createElement("td");
+                td.innerText = object[key];
+                tr.appendChild(td);
+
+                document.getElementById("obj-table").append(tr);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
