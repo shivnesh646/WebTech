@@ -95,6 +95,16 @@
             
             }
         );
+        (e) => {
+                if (speed > parseInt(e.target.value))
+                    speed = parseInt(e.target.value) / 100;
+                else
+                    speed = parseInt(e.target.value) * 100;
+
+                clearInterval(movement);
+                move();
+            }
+        );
 
         // Q5
         const objects = [
