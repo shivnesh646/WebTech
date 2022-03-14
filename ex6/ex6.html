@@ -76,8 +76,9 @@
         const inc = () => document.getElementById("title").style.fontSize = "50px";
         const dec = () => document.getElementById("title").style.fontSize = "20px";
 
-        let movement;
+       let movement;
         let speed = 10;
+        let isMoving = false;
 
         const move = () => {
             const car = document.getElementById("car-image");
@@ -90,10 +91,16 @@
         }
 
         document.getElementById("move").addEventListener("click", (e) => {
+            if (isMoving) return;
+            isMoving = true;
             move();
         });
 
-        document.getElementById("stop").addEventListener("click", (e) => clearInterval(movement));
+        document.getElementById("stop").addEventListener("click", (e) => {
+            isMoving = false;
+            clearInterval(movement);
+        });
+        document.getElementById("accelerator").addEventListener(
             "input",
             (e) => {
                 if (speed > parseInt(e.target.value))
@@ -104,6 +111,7 @@
                 clearInterval(movement);
                 move();
             }
+        );
        
 
         // Q5
